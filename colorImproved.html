@@ -1,0 +1,93 @@
+<html>
+    <head>
+      <style>
+        div {
+            width: 100px;
+            height: 150px;
+            background-color: gray;
+            position:relative;
+            top: 0px;
+            left: 0px;
+            margin: 0px;
+            padding: 0px;
+        }
+      </style>
+      <script>
+        changeColor = function() {
+              var red = document.querySelector('#redInput').value;
+              var green = document.querySelector('#greenInput').value;
+              var blue = document.querySelector('#blueInput').value;
+
+              var colorStr = "rgb("+red+","+green+","+blue+")";
+              document.body.style.backgroundColor = colorStr;
+        }
+
+          changeBox1 = function() {
+              var red = document.querySelector('#redInput').value;
+              var green = document.querySelector('#greenInput').value;
+              var blue = document.querySelector('#blueInput').value;
+
+              var colorStr = "rgb("+red+","+green+","+blue+")";
+              document.querySelector('#tile1').style.backgroundColor = colorStr;
+              document.querySelector('#tile1').innerHTML = 
+                "<p> value of red is " + red + "<br>" + 
+                "<p> value of green is " + green + "<br>" + 
+                "<p> value of blue is " + blue + "<br>";
+          }
+ 
+          changeBox2 = function() {
+              var red = document.querySelector('#redInput').value;
+              var green = document.querySelector('#greenInput').value;
+              var blue = document.querySelector('#blueInput').value;
+
+              var colorStr = "rgb("+red+","+green+","+blue+")";
+              document.querySelector('#tile2').style.backgroundColor = colorStr;
+              document.querySelector('#tile2').innerHTML = 
+                "<p> value of red is " + red + "<br>" + 
+                "<p> value of green is " + green + "<br>" + 
+                "<p> value of blue is " + blue + "<br>";
+          }
+          showValues = function() { 
+              document.querySelector('#redValue').innerHTML = document.querySelector("#redInput").value;
+              document.querySelector('#greenValue').innerHTML = document.querySelector("#greenInput").value;
+              document.querySelector('#blueValue').innerHTML = document.querySelector("#blueInput").value;
+       }
+       window.onload = function() { changeColor(); showValues(); }
+      </script>
+    </head>
+
+    <body>
+      
+      <label for="redInput">Red:</label>
+          <input type="range" min="0" max="255" id="redInput" onmousemove="changeColor(); showValues();" value="255" />
+          <span id="redValue"></span> <br>
+
+      <label for="greenInput">Green:</label>
+          <input type="range" min="0" max="255" id="greenInput" onmousemove="changeColor(); showValues()" value="255" />
+          <span id ="greenValue"></span><br>
+
+      <label for="blueInput">Blue:</label>
+          <input type="range" min="0" max="255" id="blueInput" onmousemove="changeColor(); showValues()" value="255" />
+          <span id="blueValue"></span> <br>
+
+<!--
+  onkeyup
+  type = range min=0 max=255
+  onmousemove
+  highlight certain passages OR tiles
+-->
+      <button onclick="showValues()"> show</button>
+
+      <button onclick="changeBox1();">Change Box 1</button>
+      <button onclick="changeBox2();">Change Box 2</button>
+
+
+
+    <div id="tile1" >  </div>
+    <div id="tile2">   </div>
+
+    </body>
+  </html>
+ 
+
+

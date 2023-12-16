@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <script>
+            alert("Shhh! If you spook the cuttlefish, she may hide!");
+
+            function mouseOver(){
+                document.getElementById("cuttlefishImg").style.width="10px";
+                document.getElementById("cuttlefishImg").style.height="10px";
+            }
+
+            function mouseOut(){
+                document.getElementById("cuttlefishImg").style.width="";
+                document.getElementById("cuttlefishImg").style.height="";
+            }
+
+            function hide() {
+                document.getElementById("cuttlefishImg").style.width="10px";
+                document.getElementById("cuttlefishImg").style.height="10px";
+            }
+
+            function show() {
+                document.getElementById("cuttlefishImg").style.width="";
+                document.getElementById("cuttlefishImg").style.height="";
+            }
+        </script>
+
+    </head>
+
+    <body>
+        <div id="MainContent">
+            <h1>The Cuttlefish</h1>
+                <figure>
+                    <img id="cuttlefishImg" onmouseover="mouseOver();" onmouseout="mouseOut();" 
+                                   src="cuttlefish.jpg" width="250px" height="250px">
+                    <figcaption>A Cuttlefish</figcaption>
+                </figure>
+                <p>The cuttlefish is an amazing creature! It's a master of disguise, able to camouflage itself. Not only does it change colors to match its surroundings, but it also changes its texture! Both of these can be done instantly. It also has a W-shaped pupil, and an internal shell that it fills with air so it can float.</p>
+                
+                <div id="buttonDiv">
+                    <button type="button" onclick="hide()">Boo!</button>
+                </div>
+                <div id="buttonDiv">
+                    <button type="button" onclick="show()">Come Back!</button>
+                </div>
+            </div>
+
+    </body>
+
+</html>

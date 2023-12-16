@@ -1,0 +1,35 @@
+<html>
+<head>
+    <script>
+        changeThisPageFunction = function() {
+            document.body.style.fontSize = "48px"; 
+            document.body.style.backgroundColor = "lightblue";
+            document.body.style.fontFamily = "Arial";
+        }
+
+        changeItBackFunction = function() {
+            document.body.style.fontSize = ""; 
+            document.body.style.backgroundColor = "";
+            document.body.style.fontFamily = "";
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Hello World!!</h1>
+
+    <button onclick="changeThisPageFunction()">
+        Click Me!
+    </button>
+
+    <button onclick="changeItBackFunction()">
+        Then Click Me!
+    </button>
+
+    <div>
+        <p>hey look! </p>
+    </div>
+
+</body>
+</html>
+ 

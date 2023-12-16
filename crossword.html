@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Crossword Puzzle</title>
+
+    <script>
+        function checkAnswer() {
+            let answer = "'" + document.querySelector("input").value + "'";
+
+            for (let node of document.querySelectorAll("td")) {
+                if (node.className.indexOf(answer) >= 0) {
+                    node.style = "color: black";
+                }
+            }
+
+            document.querySelector("input").value="";
+        }
+    </script>
+
+    <style>
+
+        td {
+            border: 1px solid rgb(31, 44, 60);
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            background-color: rgb(224, 238, 255);
+            color: rgb(224, 238, 255);
+        }
+
+        td:empty {
+            background-color: rgb(31,44, 60);
+        }
+
+        table {
+            border-collapse: collapse;
+            margin: auto;
+        }
+
+        sup {
+            color: rgb(52, 52, 95);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        h2{
+            text-align: center;
+        }
+
+        body{
+            background-color: lightgrey;
+            color: rgb(52, 52, 95);
+        }
+        
+        form{
+            text-align:center;
+        }
+
+        td#across{
+            background: lightgrey;
+            border: 5px solid lightgrey;
+            color: rgb(52, 52, 95);
+            text-align: left;
+            table-layout: fixed;
+            width: 50%;
+        }
+
+        td#down{
+            background: lightgrey;
+            border: 5px solid lightgrey;
+            color: rgb(52, 52, 95);
+            text-align: left;
+            table-layout: fixed;
+            width: 50%;
+        }
+
+        table#clues{
+            width: 480px;
+            text-align: center;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <h1> Zoë's Crossword</h1>
+
+    <table>
+
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td></td>
+            <td class="'implode'">
+                <sup>6</sup>I
+            </td>
+            <td class="'implode' 'mercury'">
+                <sup>1</sup>M
+            </td>
+            <td class="'implode'">P</td>
+            <td class="'implode' 'lights'">
+                <sup>3</sup>L
+            </td>
+            <td class="'implode'">O</td>
+            <td class="'implode' 'darken'">
+                <sup>5</sup>D
+            </td>
+            <td class="'implode'">E</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="'mercury'">E</td>
+            <td></td>
+            <td class="'lights'">I</td>
+            <td></td>
+            <td class="'darken'">A</td>
+            <td></td>
+            <td></td>
+            <td class="'hazel'">
+                <sup>11</sup>H
+            </td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td class="'foragers'">
+                <sup>13</sup>F
+            </td>
+            <td class="'foragers'">O</td>
+            <td class="'foragers' 'mercury'">R</td>
+            <td class="'foragers'">A</td>
+            <td class="'foragers' 'lights'">G</td>
+            <td class="'foragers'">E</td>
+            <td class="'foragers' 'darken'">R</td>
+            <td class="'foragers'">S</td>
+            <td></td>
+            <td class="'hazel'">A</td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="'mercury'">C</td>
+            <td></td>
+            <td class="'lights'">H</td>
+            <td></td>
+            <td class="'darken'">K</td>
+            <td></td>
+            <td></td>
+            <td class="'hazel'">Z</td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td class="'shuttle'">
+                <sup>2</sup>S
+            </td>
+            <td class="'shuttle'">H</td>
+            <td class="'shuttle' 'mercury'">U</td>
+            <td class="'shuttle'">T</td>
+            <td class="'shuttle' 'lights'">T</td>
+            <td class="'shuttle'">L</td>
+            <td class="'shuttle' 'darken'">E</td>
+            <td></td>
+            <td></td>
+            <td class="'hazel'">E</td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="'mercury'">R</td>
+            <td></td>
+            <td class="'lights'">S</td>
+            <td></td>
+            <td class="'null' 'darken'">
+                <sup>8</sup>N
+            </td>
+            <td class="'null'">U</td>
+            <td class="'null' 'lumber'">
+                <sup>9</sup>L
+            </td>
+            <td class="'null' 'hazel'">L</td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <td class="'hazy'">
+                <sup>7</sup>H
+            </td>
+            <td class="'hazy' 'axe'">
+                <sup>14</sup>A
+            </td>
+            <td class="'hazy'">Z</td>
+            <td class="'hazy' 'mercury'">Y</td>
+            <td></td>
+            <td></td>
+            <td class="'pizza'">
+                <sup>12</sup>P
+            </td>
+            <td></td>
+            <td></td>
+            <td class="'lumber'">U</td>
+            <td></td>
+            <td></td>
+        </tr>
+
+        <tr>
+            
+            <td></td>
+            <td class="'axe'">X</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="'pizza'">I</td>
+            <td></td>
+            <td></td>
+            <td class="'lumber'">M</td>
+            <td></td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td class="'axe'">E</td>
+            <td></td>
+            <td class="'buzz'">
+                <sup>4</sup>B
+            </td>
+            <td class="'buzz'">U</td>
+            <td class="'buzz'">Z</td>
+            <td class="'buzz' 'pizza'">Z</td>
+            <td></td>
+            <td></td>
+            <td class="'lumber'">B</td>
+            <td></td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="'pizza'">Z</td>
+            <td></td>
+            <td></td>
+            <td class="'lumber'">E</td>
+            <td></td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <td class="'jawbreaker'">
+                <sup>10</sup>J
+            </td>
+            <td class="'jawbreaker'">A</td>
+            <td class="'jawbreaker'">W</td>
+            <td class="'jawbreaker'">B</td>
+            <td class="'jawbreaker'">R</td>
+            <td class="'jawbreaker'">E</td>
+            <td class="'jawbreaker' 'pizza'">A</td>
+            <td class="'jawbreaker'">K</td>
+            <td class="'jawbreaker'">E</td>
+            <td class="'jawbreaker' 'lumber'">R</td>
+            <td></td>
+            <td></td>
+        </tr>
+
+    </table>
+    
+    <h2>Clues</h2>
+
+    <table id="clues">
+    <tr>
+
+        <td id="across">
+        <h3 style="text-align: center;">Across</h3>
+        <ol>
+            <li value="2">A vehicle designed to transport people to places like airports</li>
+            <li value="4">The sound that bees make</li>
+            <li value="6">Violently collapse inwards</li>
+            <li>Dim and hard to see, often due to fog or things
+                in the air
+            </li>
+            <li>Empty or a different word for the number 0</li>
+            <li value="10">A large and spherical hard candy</li>
+            <li value="13">People who gather food instead of hunting or farming (plural)</li>
+        </ol>
+        </td>
+
+        <td id="down">
+        <h3 style="text-align: center;">Down</h3>
+        <ol>
+            <li>Metal used in old thermometers that is very
+                dangerous to eat
+            </li>
+            <li value="3">Device that illuminates areas (plural)</li>
+            <li value="5">To take away light or make dark</li>
+            <li value="9">Trees that have been cut down for
+                commercial use
+            </li>
+            <li value="11">A green-brown color, often
+                refering to eye color
+            </li>
+            <li>Italian round bread with toppings</li>
+            <li value="14">Tool used to cut down trees</li>
+        </ol>
+        </td>
+     
+    </tr>
+    </table>
+
+    <form
+        onsubmit="javascript:checkAnswer()"
+        action="javascript:null"
+    >
+        <input />
+    </form>
+    </div>
+
+</body>
+
+</html>

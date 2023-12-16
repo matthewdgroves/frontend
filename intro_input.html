@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <script>
+            checkForInput = function() {
+                var userName = document.myForm.name.value;
+                var userColor = document.myForm.favoriteColor.value;
+                var userLanguage = document.myForm.favLanguage.value;
+
+                var outputFieldName = document.getElementById('f1');
+                var outputFieldColor = document.getElementById('f2');
+                var outputFieldLang = document.getElementById('f3');
+
+                outputFieldName.innerHTML = "your name is: " + userName + " thanks";
+                outputFieldColor.innerHTML = userColor;
+                outputFieldLang.innerHTML = userLanguage;
+            }
+        </script>
+    </head>
+
+    <body>
+        <form name="myForm">
+            <p> What is your name, please? </p>
+            <input type = 'text' name='name' value="Name goes here:">
+
+            <p>What is your favorite color, please?</p>
+            <select name="favoriteColor">
+                <option value="Red">Red</option>
+                <option value="Green">Green</option>
+                <option value="Blue">Blue</option>
+                <option value="Yellow">Yellow</option>
+            </select>
+
+            <br>            
+            <br>
+            <p>What is your favorite language, please?</p>
+            <input type="radio" id="html" name="favLanguage" value="HTML">
+            <label for="html">HTML</label>
+            <br>
+            <input type="radio" id="css" name="favLanguage" value="css">
+            <label for="css">CSS</label>
+            <br>
+            <input type="radio" id="javascript" name="favLanguage" value="JavaScript">
+            <label for="javascript">javascript</label>
+
+            <br>
+            <br>
+
+            <input type="submit" value ="click me!" onclick= "
+                checkForInput(); 
+                return false;
+                ">
+        </form>
+
+        <p> submit the form and I will show your name and favorite color below:</p>
+        <p id="f1"></p>
+        <p id="f2"></p>
+        <p id="f3"></p>
+    </body>
+</html>
+
+
+<!--
+    1. set dark mode on each page of your site
+    2. experiment with user input; 
+    3. let the user pick their own color theme
+
+-->
